@@ -1,29 +1,30 @@
-package com.shop.user;
+package com.shop.cart;
 
-import com.shop.dto.User;
-import com.shop.service.UserService;
+import com.shop.dto.Cart;
+import com.shop.service.CartService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
 public class InsertTests {
-
     @Autowired
-    UserService service;
+    CartService service;
 
-    @DisplayName("Insert Testing")
+    @DisplayName("INSERT")
     @Test
     void contextLoads(){
-        User user = new User(16, "555", "555", "555");
-        try {
-            service.register(user);
+        Cart cart = new Cart(555, 16, 1);
+
+        try{
+            service.register(cart);
             System.out.println("OK");
+
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("Fail");
+
         }
     }
 }

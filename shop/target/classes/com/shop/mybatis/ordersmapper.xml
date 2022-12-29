@@ -19,5 +19,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM orders WHERE order_no=#{order_no}
 	</delete>
-	
+
+	<select id="selectPriceAll" resultType="Orders">
+		select sum(i.price * od.count) as total
+		FROM orderdetail od
+		INNER JOIN orders o ON od.order_no = o.order_no
+		INNER JOIN item i ON od.item_no = i.item_no
+	</select>
 </mapper>

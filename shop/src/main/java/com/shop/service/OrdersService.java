@@ -38,5 +38,9 @@ public class OrdersService implements MyService<Integer, Orders> {
         return mapper.selectall();
     }
 
+    public List<Orders> getPriceAll() throws Exception{
+        return mapper.selectPriceAll();
+    }
+
 
 }

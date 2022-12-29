@@ -15,5 +15,12 @@ public class Orders {
     private String payment;
     private Date order_date;
 
+    private int total;
 
+    public Orders(int order_no, int user_no, String payment, Date order_date) {
+        this.order_no = order_no;
+        this.user_no = user_no;
+        this.payment = payment;
+        this.order_date = order_date;
+    }
 }

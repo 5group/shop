@@ -17,7 +17,7 @@ public class InsertTests {
     @DisplayName("Insert Testing")
     @Test
     void contextLoads(){
-        User user = new User(18, "123234", "12341234", "12341234");
+        User user = new User(100, "가나다라", "마바사아", "조민수");
         try {
             service.register(user);
             System.out.println("OK");

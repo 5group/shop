@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService implements MyService<String, User> {
+public class UserService implements MyService<Integer, User> {
     @Autowired
     UserMapper mapper;
     @Override
@@ -18,7 +18,7 @@ public class UserService implements MyService<String, User> {
     }
 
     @Override
-    public void remove(String k) throws Exception {
+    public void remove(Integer k) throws Exception {
         mapper.delete(k);
     }
 
@@ -28,7 +28,7 @@ public class UserService implements MyService<String, User> {
     }
 
     @Override
-    public User get(String k) throws Exception {
+    public User get(Integer k) throws Exception {
         return mapper.select(k);
     }
 

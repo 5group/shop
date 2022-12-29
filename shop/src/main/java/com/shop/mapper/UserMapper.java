@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Mapper
-public interface UserMapper extends MyMapper<String, User> {
+public interface UserMapper extends MyMapper<Integer, User> {
 
 }

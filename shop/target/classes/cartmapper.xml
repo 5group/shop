@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.CartMapper">
+	
+	<insert id="insert" parameterType="Cart">
+		INSERT INTO cart VALUES (cart_no,
+		#{user_no}, #{item_no}, #{quantity}, NOW());
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM cart WHERE cart_no=#{cart_no}
+	</delete>
+	
+	<update id="update">
+		UPDATE cart SET quantity=#{quantity} WHERE cart_no=#{cart_no}
+	</update>
+	
+	<select id="select" parameterType="Integer"  resultType="Cart">
+		SELECT ca.cart_no, cu.user_id AS user_id, cu.user_name AS user_name, ca.indate,
+			   it.item_name AS item_name, it.price AS item_price, 
+			   ca.quantity, (ca.quantity*it.price) AS total
+		FROM cart ca
+		INNER JOIN user cu ON ca.user_no = cu.user_no
+		INNER JOIN item it ON ca.item_no = it.item_no
+		WHERE ca.cart_no=#{cart_no};
+	</select>
+	
+	<select id="selectall" resultType="Cart">
+		SELECT ca.cart_no, cu.user_id AS user_id, cu.user_name AS user_name, ca.indate,
+			   it.item_name AS item_name, it.price AS item_price, 
+			   ca.quantity, (ca.quantity*it.price) AS total
+		FROM cart ca
+		INNER JOIN user cu ON ca.user_no = cu.user_no
+		INNER JOIN item it ON ca.item_no = it.item_no
+	</select>
+</mapper>

@@ -16,9 +16,20 @@ public class Cart {
     private int quantity;
     private Date indate;
 
-    public Cart(int cart_no, int user_no, int item_no){
-        this.cart_no = cart_no;
-        this.user_no = user_no;
-        this.item_no = item_no;
-    }
+    private String user_id;
+    private String user_name;
+    private String item_name;
+    private int price;
+    private int total;
+    
+	public Cart(int user_no, int item_no, int quantity) {
+		this.user_no = user_no;
+		this.item_no = item_no;
+		this.quantity = quantity;
+	}
+	
+	public Cart(int cart_no, int quantity) {
+		this.cart_no = cart_no;
+		this.quantity = quantity;
+	}
 }

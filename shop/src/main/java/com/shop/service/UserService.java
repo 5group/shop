@@ -40,4 +40,8 @@ public class UserService implements MyService<Integer, User> {
     public List<User> getOrder(String user_id) throws Exception{
     	return mapper.selectUserOrder(user_id);
     }
+
+    public List<User> getPrice(String user_id) throws Exception{
+        return mapper.selectUserTotalPrice(user_id);
+    }
 }

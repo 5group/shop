@@ -6,13 +6,19 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 
 	<select resultType="Item" parameterType="Integer" id="select">SELECT * FROM item WHERE item_no=#{item_no} </select>
 
-	<select resultType="Item" id="selectall">SELECT * FROM item </select>
+	<select resultType="Item" id="selectall">SELECT * FROM item</select>
 
 	<insert parameterType="Item" id="insert">INSERT INTO item VALUES (item_no, #{cate_no}, #{item_name}, #{price}, null, null)</insert>
 
 	<update parameterType="Item" id="update">UPDATE item SET cate_no=#{cate_no}, item_name=#{item_name}, price=#{price}, des=null, item_rdate=null WHERE item_no=#{item_no} </update>
 
 	<delete parameterType="Integer" id="delete">DELETE FROM item WHERE item_no=#{item_no} </delete>
+
+	<select resultType="Item" id="PriceSortDescSelectAll">SELECT * FROM item ORDER BY price desc</select>
+
+	<select resultType="Item" id="PriceSortAscSelectAll">SELECT * FROM item ORDER BY price asc</select>
+
+
 
 </mapper>
 

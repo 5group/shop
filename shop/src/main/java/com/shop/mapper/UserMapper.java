@@ -12,4 +12,5 @@ import com.shop.frame.MyMapper;
 @Mapper
 public interface UserMapper extends MyMapper<Integer, User> {
 	public List<User> selectUserOrder(String user_id) throws Exception;
+	public List<User> selectUserTotalPrice(String user_id) throws Exception;
 }

@@ -28,4 +28,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		WHERE u.user_id=#{user_id}
 	</select>
 
+	<select id="selectUserTotalPrice" parameterType="String" resultType="User">
+		SELECT u.user_id, u.user_name, sum((i.price*od.count)) as total
+		FROM user u
+				 INNER JOIN orders o ON u.user_no = o.user_no
+				 INNER JOIN orderdetail od ON o.order_no = od.order_no
+				 INNER JOIN item i ON od.Item_no=i.item_no
+		WHERE u.user_id=#{user_id} group by u.user_id, u.user_name;
+	</select>
+
 </mapper>

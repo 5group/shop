@@ -1,8 +1,8 @@
-package com.shop.cart;
+package com.shop.item;
 
-import com.shop.dto.Cart;
-import com.shop.service.CartService;
-import org.junit.jupiter.api.DisplayName;
+
+import com.shop.dto.Item;
+import com.shop.service.ItemService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,21 +10,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class InsertTests {
     @Autowired
-    CartService service;
+    ItemService service;
 
-    @DisplayName("INSERT")
     @Test
     void contextLoads(){
-        Cart cart = new Cart(555, 16, 1);
+        Item item = new Item(6, 33, "iphone 14", 905050);
 
         try{
-            service.register(cart);
-            System.out.println("OK");
-
+            service.register(item);
+            System.out.println("Ok");
         }catch (Exception e){
             e.printStackTrace();
-            System.out.println("Fail");
-
+            System.out.println("fail");
         }
     }
+
 }

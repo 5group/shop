@@ -10,18 +10,18 @@ import java.util.Date;
 @Getter
 @ToString
 public class User {
-    private int no;
-    private String id;
-    private String pwd;
-    private String name;
-    private String email;
-    private String number;
-    private Date rdate;
+    private int user_no;
+    private String user_id;
+    private String user_pwd;
+    private String user_name;
+    private String user_email;
+    private String user_phone_number;
+    private Date user_rdate;
 
-    public User(int no, String id, String pwd, String name){
-        this.no = no;
-        this.id = id;
-        this.pwd = pwd;
-        this.name = name;
+    public User(int user_no, String user_id, String user_pwd, String user_name){
+        this.user_no = user_no;
+        this.user_id = user_id;
+        this.user_pwd = user_pwd;
+        this.user_name = user_name;
     }
 }

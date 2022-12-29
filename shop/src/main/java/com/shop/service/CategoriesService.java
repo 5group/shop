@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.shop.dto.Categories;
 import com.shop.frame.MyService;
 import com.shop.mapper.CategoriesMapper;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CategoriesService implements MyService<Integer, Categories>{
 	
 	@Autowired

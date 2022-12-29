@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INSERT INTO Categories VALUES (cate_no, #{cate_name}, #{cate_no2})
 	</insert>
 	
-	<delete id="delete">
+	<delete id="delete" parameterType="Integer">
 		DELETE FROM Categories WHERE cate_no=#{cate_no}
 	</delete>
 	
@@ -19,9 +19,5 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<update parameterType="Categories" id="update">
 		UPDATE item SET cate_name=#{cate_name}, cate_no2=#{cate_no2} WHERE cate_no=#{cate_no}
 	</update>
-
-	<delete parameterType="Categories" id="delete">
-		DELETE FROM item WHERE item_no=#{item_no}
-	</delete>
 
 </mapper>

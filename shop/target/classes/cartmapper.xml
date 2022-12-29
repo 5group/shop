@@ -9,11 +9,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		#{user_no}, #{item_no}, #{quantity}, NOW());
 	</insert>
 	
-	<delete id="delete">
+	<delete id="delete" parameterType="Interger">
 		DELETE FROM cart WHERE cart_no=#{cart_no}
 	</delete>
 	
-	<update id="update">
+	<update id="update" parameterType="Cart">
 		UPDATE cart SET quantity=#{quantity} WHERE cart_no=#{cart_no}
 	</update>
 	

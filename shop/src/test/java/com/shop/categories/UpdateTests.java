@@ -16,9 +16,9 @@ class UpdateTests {
 	
 	@Test
 	void contextLoads() {
-		Categories cate = new Categories(34, "세탁기", 30);
+		Categories cate = new Categories(33, "세탁기", 30);
 		try {
-			service.register(cate);
+			service.modify(cate);
 			System.out.println("OK");
 		} catch (Exception e) {
 			System.out.println("Fail");

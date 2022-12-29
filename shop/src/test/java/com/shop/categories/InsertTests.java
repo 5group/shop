@@ -16,7 +16,7 @@ class InsertTests {
 	
 	@Test
 	void contextLoads() {
-		Categories cate = new Categories(34, "냉장고" , 30);
+		Categories cate = new Categories(40, "옷" , 30);
 		try {
 			service.register(cate);
 			System.out.println("OK");

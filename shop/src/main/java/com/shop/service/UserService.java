@@ -36,4 +36,8 @@ public class UserService implements MyService<Integer, User> {
     public List<User> get() throws Exception {
         return mapper.selectall();
     }
+    
+    public List<User> getOrder(String user_id) throws Exception{
+    	return mapper.selectUserOrder(user_id);
+    }
 }

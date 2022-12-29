@@ -18,8 +18,8 @@ class UpdateTests {
 	@Test
 	void contextLoads() {
 		Orders orders = new Orders();
-		orders.setOrder_no(1);
-		orders.setUser_no(2);
+		orders.setOrder_no(5);
+		orders.setUser_no(4);
 		orders.setPayment("ㅁㅁ카드");
 		orders.setOrder_date(null);
 		try {

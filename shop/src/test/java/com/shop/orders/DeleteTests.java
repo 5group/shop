@@ -16,7 +16,7 @@ class DeleteTests {
 	@Test
 	void contextLoads() {
 		try {
-			service.remove(1);
+			service.remove(4);
 			System.out.println("상품 삭제 완료");
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -38,4 +38,14 @@ public class ItemService implements MyService<Integer, Item> {
     public List<Item> get() throws Exception {
         return mapper.selectall();
     }
+    
+    // sort desc
+    public List<Item> PriceSortDescSelectAll() throws Exception{
+    	return mapper.PriceSortDescSelectAll();
+    }
+    // sort asc
+    public List<Item> PriceSortAscSelectAll() throws Exception{
+    	return mapper.PriceSortAscSelectAll();
+    }
+    
 }

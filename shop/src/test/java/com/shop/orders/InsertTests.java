@@ -22,6 +22,8 @@ public class InsertTests {
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("fail");
+            System.out.println("fail2");
+            
         }
     }
 
